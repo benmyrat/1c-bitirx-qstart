@@ -11,9 +11,22 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             <div class="row">
                 <div class="col-md-4">
                     <address>
-                        Тел. (8442) 00-00-00; 00-00-00
-                        <a href="mailto:">sale@test.ru</a> <br>
-                        Москва, 2-я Хуторская ул., 38А<br>
+                        <? $APPLICATION->IncludeFile(
+                            SITE_DIR . "/include/phone2.php",
+                            array(),
+                            array(
+                                "MODE" => "HTML"
+                            )
+                        ) ?>
+
+                        <? $APPLICATION->IncludeFile(
+                            SITE_DIR . "/include/address.php",
+                            array(),
+                            array(
+                                "MODE" => "HTML"
+                            )
+                        ) ?>
+
                     </address>
                 </div>
 
@@ -26,13 +39,14 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
                 <div class="col-md-4 col-md-pull-4 hidden-print">
                     <ul class="list-inline social-links">
-                        <li><a href="https://vk.com/intervolga"><i class="fa fa-vk"></i></a></li>
-                        <li><a href="https://www.facebook.com/intervolga34"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://twitter.com/intervolga_ru"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="mailto:info@intervolga.ru"><i class="fa fa-envelope"></i></a></li>
-                        <li><a href="https://www.youtube.com/user/wwwintervolgaru"><i class="fa fa-youtube"></i></a>
-                        </li>
-                        <li><a href="https://instagram.com/intervolga_ru/"><i class="fa fa-instagram"></i></a></li>
+                        <? $APPLICATION->IncludeFile(
+                            SITE_DIR . "/include/social-links.php",
+                            array(),
+                            array(
+                                "MODE" => "HTML"
+                            )
+                        ) ?>
+
                         <li>
                             <div id="bx-composite-banner"></div>
                         </li>
