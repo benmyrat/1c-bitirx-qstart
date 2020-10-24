@@ -2,3 +2,7 @@
 /bitrix/
 /upload/
 /.idea/
+/materials/
+.DS_Store
+/local/modules/
+/local/modules/ion/
