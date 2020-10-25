@@ -322,20 +322,25 @@ $bIsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
             </div>
         </div>
     <? endif; ?>
-    <div class="container">
-        <? if (!$bIsMainPage): ?>
-            <? $APPLICATION->IncludeComponent(
-                "bitrix:breadcrumb",
-                "",
-                array(
-                    "COMPONENT_TEMPLATE" => ".default",
-                    "PATH" => "",    // Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
-                    "SITE_ID" => "-",    // Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
-                    "START_FROM" => "0",    // Номер пункта, начиная с которого будет построена навигационная цепочка
-                ),
-                false
-            ); ?>
-        <? endif; ?>
-        <h1><? $APPLICATION->ShowTitle(false); ?></h1>
-    </div>
+
+    <? if (ERROR_404 == 'Y'): ?>
+    <div class="page-not-found">
+    <? else: ?>
+        <div class="container">
+            <? if (!$bIsMainPage): ?>
+                <? $APPLICATION->IncludeComponent(
+                    "bitrix:breadcrumb",
+                    "",
+                    array(
+                        "COMPONENT_TEMPLATE" => ".default",
+                        "PATH" => "",    // Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+                        "SITE_ID" => "-",    // Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+                        "START_FROM" => "0",    // Номер пункта, начиная с которого будет построена навигационная цепочка
+                    ),
+                    false
+                ); ?>
+            <? endif; ?>
+            <h1><? $APPLICATION->ShowTitle(false); ?></h1>
+        </div>
+    <? endif; ?>
     <div class="container">
